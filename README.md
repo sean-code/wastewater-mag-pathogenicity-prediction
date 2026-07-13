@@ -6,7 +6,7 @@
 
 This repository contains a reproducible, HPC-scale pipeline that screens **wastewater metagenome-assembled genomes (MAGs)** for bacterial pathogenicity. It acquires MAG/assembly datasets from eight public sources, filters them down to single-organism genomes, runs per-organism pathogenicity inference as a **distributed Slurm job array**, and reduces the results into a single stratified table plus a findings report.
 
-The machine-learning model and pangenome used for inference are produced by the companion project [`complete-chromosome-pathogen-non-pathogen-genomes`](https://github.com/) (RF + XGBoost over a ppanggolin gene-family presence/absence matrix); this repository is the **downstream application** of that model to wastewater MAGs.
+The machine-learning model and pangenome used for inference are produced by the companion project [`complete-chromosome-pathogen-non-pathogen-genomes`](https://github.com/bicbioeng/pathogen-detection-gomics) (RF + XGBoost over a ppanggolin gene-family presence/absence matrix); this repository is the **downstream application** of that model to wastewater MAGs.
 
 ---
 
