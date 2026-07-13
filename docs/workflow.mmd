@@ -1,0 +1,25 @@
+flowchart LR
+    subgraph S1["1 · Data Acquisition"]
+        A1[8 public sources<br/>Figshare · ENA · NCBI · Zenodo]
+    end
+    subgraph S2["2 · Extract & Filter"]
+        A2[unzip NCBI to FASTA]
+        A3{genome size?}
+        A4[single-MAG]
+        A5[metagenome / tiny set aside]
+    end
+    subgraph S3["3 · Prediction (Slurm array)"]
+        A6[size-balanced batches]
+        A7[pathogen_predict.py mags in parallel]
+        A8[merge]
+    end
+    subgraph S4["4 · Results"]
+        A9[prediction_results_ALL.csv]
+        A10[findings report]
+    end
+    M[(Trained model + pangenome)]
+    A1 --> A2 --> A3
+    A3 --> A4 --> A6
+    A3 --> A5
+    A6 --> A7 --> A8 --> A9 --> A10
+    M -.read-only.-> A7

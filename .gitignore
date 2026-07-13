@@ -1,0 +1,25 @@
+# large data / working dirs — keep on scratch, not in git
+datasets/
+**/mags_input/
+**/genomes/
+**/metagenome_assemblies/
+**/tiny_fragments/
+**/batches/
+**/_tmp/
+**/tmp/
+*.fna
+*.fna.gz
+*.zip
+*.h5
+
+# logs / slurm
+*.log
+*.out
+*.err
+_logs/
+
+# python / jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
